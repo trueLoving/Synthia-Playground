@@ -1,13 +1,7 @@
 {
   "name": "Synthia-Playground",
-  "version": "1.0.0",
   "description": "Synthia Engine 示例集合：包含 Vite（Vue 3）与 Webpack（React 18）项目，演示使用 Synthia CLI 的统一开发/构建/预览流程。",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "packageManager": "pnpm@10.18.3"
 }
