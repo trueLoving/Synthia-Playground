@@ -1,6 +1,0 @@
-{
-  "nodeVersion": "22.18.0",
-  "packageManager": "pnpm@10.18.3",
-  "installCommand": "pnpm install"
-}
-
