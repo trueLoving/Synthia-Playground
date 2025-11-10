@@ -1,25 +1,20 @@
 import { defineConfig } from 'synthia-cli';
 import { docPlugin } from 'synthia-doc';
-import type { DocPluginOptions } from 'synthia-doc';
 import { cachePlugin } from 'synthia-cache';
-import type { CachePluginOptions } from 'synthia-cache';
 import { doctorPlugin } from 'synthia-doctor';
-import type { DoctorPluginOptions } from 'synthia-doctor';
 import { testPlugin } from 'synthia-test';
-import type { TestPluginOptions } from 'synthia-test';
 import { lintPlugin } from 'synthia-lint';
-import type { LintPluginOptions } from 'synthia-lint';
 
-const docPluginOptions: DocPluginOptions = {
+const docPluginOptions = {
   enabled: true,
-  type: 'local' as const,
+  type: 'local',
   directory: '.synthia-doc',
   ttl: 3600000,
   maxSize: '100MB',
   compression: true,
-  strategy: 'lru' as const,
+  strategy: 'lru',
 };
-const cachePluginOptions: CachePluginOptions = {
+const cachePluginOptions = {
   enabled: true,
   local: {
     dir: '.synthia-cache',
@@ -29,15 +24,15 @@ const cachePluginOptions: CachePluginOptions = {
   },
 };
 
-const doctorPluginOptions: DoctorPluginOptions = {
+const doctorPluginOptions = {
   enabled: true,
   rules: [],
   fix: false,
   output: 'console',
-  format: 'table' as const,
+  format: 'table',
 };
 
-const testPluginOptions: TestPluginOptions = {
+const testPluginOption = {
   enabled: true,
   framework: 'vitest',
   watch: false,
@@ -45,7 +40,7 @@ const testPluginOptions: TestPluginOptions = {
   ci: false,
 };
 
-const lintPluginOptions: LintPluginOptions = {
+const lintPluginOptions = {
   enabled: true,
   eslint: { enabled: true },
   prettier: { enabled: true },
@@ -91,7 +86,7 @@ export default defineConfig({
     // 测试插件
     {
       name: 'test',
-      plugin: testPlugin(testPluginOptions),
+      plugin: testPlugin(testPluginOption),
     },
     // 代码检查插件
     {
